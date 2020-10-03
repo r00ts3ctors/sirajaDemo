@@ -181,7 +181,7 @@
                             <!-- Row in form END -->
                             <div class="row">
                                 <div class="col 6">
-                                    <button type="submit" name="submit" class="btn-large blue waves-effect waves-light">SIMPAN <i class="material-icons">done</i></button>
+                                    <button type="submit" name="submit" class="btn-large blue waves-effect waves-light">SUBMIT <i class="material-icons">done</i></button>
                                 </div>
                                 <div class="col 6">
                                     <a href="?page=ref" class="btn-large deep-orange waves-effect waves-light">BATAL <i class="material-icons">clear</i></a>

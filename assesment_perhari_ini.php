@@ -256,8 +256,8 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="modal-footer white">
-                                                                    <button type="submit" class="modal-action waves-effect waves-green btn-flat" name="simpan">Simpan</button>';
-                                                                    if(isset($_REQUEST['simpan'])){
+                                                                    <button type="submit" class="modal-action waves-effect waves-green btn-flat" name="SUBMIT">SUBMIT</button>';
+                                                                    if(isset($_REQUEST['SUBMIT'])){
                                                                         $id_sett = "1";
                                                                         $surat_masuk = $_REQUEST['surat_masuk'];
                                                                         $id_user = $_SESSION['id_user'];

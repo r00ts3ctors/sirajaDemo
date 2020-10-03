@@ -41,36 +41,26 @@
 
             				            <tbody>
             				                <tr>
-            				                    <td width="13%">Tujuan</td>
-            				                    <td width="1%">:</td>
-            				                    <td width="86%">'.$row['tujuan'].'</td>
-            				                </tr>
-            				                <tr>
-            				                    <td width="13%">Isi Disposis</td>
-            				                    <td width="1%">:</td>
-            				                    <td width="86%">'.$row['isi_disposisi'].'</td>
-            				                </tr>
-            				                <tr>
-            				                    <td width="13%">Sifat</td>
+            				                    <td width="13%">Jam</td>
             				                    <td width="1%">:</td>
             				                    <td width="86%">'.$row['sifat'].'</td>
             				                </tr>
             				                <tr>
-            				                    <td width="13%">Batas Waktu</td>
+            				                    <td width="13%">Tanggal</td>
             				                    <td width="1%">:</td>
             				                    <td width="86%">'.date('d M Y', strtotime($row['batas_waktu'])).'</td>
             				                </tr>
-                                            <tr>
-                                                <td width="13%">Catatan</td>
+                                             <tr>
+                                                <td width="13%">Keterangan</td>
                                                 <td width="1%">:</td>
-                                                <td width="86%">'.$row['catatan'].'</td>
+                                                <td width="86%">'.$row['isi_disposisi'].'</td>
                                             </tr>
             				            </tbody>
             				   		</table>
         				        </div>
                                 <div class="card-action">
-        		                     <a href="?page=tsm&act=disp&id_surat='.$row['id_surat'].'&sub=del&submit=yes&id_disposisi='.$row['id_disposisi'].'" class="btn-large deep-orange waves-effect waves-light white-text">HAPUS <i class="material-icons">delete</i></a>
-        		                    <a href="?page=tsm&act=disp&id_surat='.$row['id_surat'].'" class="btn-large blue waves-effect waves-light white-text">BATAL <i class="material-icons">clear</i></a>
+        		                     <a href="?page=tsm&act=scr&id_surat='.$row['id_surat'].'&sub=del&submit=yes&id_disposisi='.$row['id_disposisi'].'" class="btn-large deep-orange waves-effect waves-light white-text">HAPUS <i class="material-icons">delete</i></a>
+        		                    <a href="?page=tsm&act=scr&id_surat='.$row['id_surat'].'" class="btn-large blue waves-effect waves-light white-text">BATAL <i class="material-icons">clear</i></a>
                                 </div>
                             </div>
                         </div>
@@ -85,12 +75,12 @@
                 		if($query == true){
                             $_SESSION['succDel'] = 'SUKSES! Data berhasil dihapus ';
                             echo '<script language="javascript">
-                                    window.location.href="./admin.php?page=tsm&act=disp&id_surat='.$row['id_surat'].'";
+                                    window.location.href="./admin.php?page=tsm&act=scr&id_surat='.$row['id_surat'].'";
                                   </script>';
                 		} else {
                             $_SESSION['errQ'] = 'ERROR! Ada masalah dengan query';
                             echo '<script language="javascript">
-                                    window.location.href="./admin.php?page=tsm&act=disp&id_surat='.$row['id_surat'].'&sub=del&id_disposisi='.$row['id_disposisi'].'";
+                                    window.location.href="./admin.php?page=tsm&act=scr&id_surat='.$row['id_surat'].'&sub=del&id_disposisi='.$row['id_disposisi'].'";
                                   </script>';
                 		}
                 	}

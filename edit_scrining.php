@@ -89,7 +89,7 @@
                         <nav class="secondary-nav">
                             <div class="nav-wrapper blue-grey darken-1">
                                 <ul class="left">
-                                    <li class="waves-effect waves-light"><a href="#" class="judul"><i class="material-icons">edit</i> Edit Scrining</a></li>
+                                    <li class="waves-effect waves-light"><a href="#" class="judul"><i class="material-icons">edit</i> Edit  Data Hasil Formulir Wajib Lapor</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -257,7 +257,7 @@
 
                         <div class="row">
                             <div class="col 6">
-                                <button type="submit" name ="submit" class="btn-large blue waves-effect waves-light">SIMPAN <i class="material-icons">done</i></button>
+                                <button type="submit" name ="submit" class="btn-large blue waves-effect waves-light">SUBMIT <i class="material-icons">done</i></button>
                             </div>
                             <div class="col 6">
                                 <a href="?page=tsm&act=scr&id_surat=<?php echo $row['id_surat']; ?>" class="btn-large deep-orange waves-effect waves-light">BATAL <i class="material-icons">clear</i></a>

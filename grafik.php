@@ -6,14 +6,14 @@
 <script type="text/javascript" src="asset/highcharts/modules/accessibility.js"></script>
 
 <?php
-//cek session
-if (empty($_SESSION['admin'])) {
-    $_SESSION['err'] = '<center>Anda harus login terlebih dahulu!</center>';
-    header("Location: ./");
-    die();
-} else {
+    //cek session
+    if(empty($_SESSION['admin'])){
+        $_SESSION['err'] = '<center>Anda harus login terlebih dahulu!</center>';
+        header("Location: ./");
+        die();
+    } else {
 
-    echo '
+        echo '
             <style type="text/css">
                 .hidd {
                     display: none
@@ -69,16 +69,16 @@ if (empty($_SESSION['admin'])) {
                 }
             </style>';
 
-    if (isset($_REQUEST['submit'])) {
+        if(isset($_REQUEST['submit'])){
 
-        $dari_tanggal = $_REQUEST['dari_tanggal'];
-        $sampai_tanggal = $_REQUEST['sampai_tanggal'];
+            $dari_tanggal = $_REQUEST['dari_tanggal'];
+            $sampai_tanggal = $_REQUEST['sampai_tanggal'];
 
-        if ($_REQUEST['dari_tanggal'] == "" || $_REQUEST['sampai_tanggal'] == "") {
-            header("Location: ./admin.php?page=grf");
-            die();
-        } else {
-            echo '
+            if($_REQUEST['dari_tanggal'] == "" || $_REQUEST['sampai_tanggal'] == ""){
+                header("Location: ./admin.php?page=grf");
+                die();
+            } else {
+                echo '
                     <!-- SHOW DAFTAR AGENDA -->
                     <!-- Row Start -->
                     <div class="row">
@@ -125,112 +125,114 @@ if (empty($_SESSION['admin'])) {
                     <div class="separator"></div>
                     <h5 class="hid">RESUME Klien</h5>
                         <div class="col s10">
-                            <p class="warna agenda">Statistik Klien dari tanggal <strong>' . indoDate($dari_tanggal) . '</strong> sampai dengan tanggal <strong>' . indoDate($sampai_tanggal) . '</strong></p>
+                            <p class="warna agenda">Statistik Klien dari tanggal <strong>'.indoDate($dari_tanggal).'</strong> sampai dengan tanggal <strong>'.indoDate($sampai_tanggal).'</strong></p>
                         </div>
                         <div class="col s2">
                             <button type="submit" onClick="window.print()" class="btn-large deep-orange waves-effect waves-light right">CETAK <i class="material-icons">print</i></button>
                         </div>
                     </div>';
 
-            if ($_SESSION['admin'] == 3) {
-                $qry = "SELECT jenis_kelamin, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' AND id_user='" . $_SESSION['id_user'] . "' GROUP BY jenis_kelamin";
-                $query3 = mysqli_query($config, $qry);
+                    if($_SESSION['admin'] == 3){
+                        $qry = "SELECT jenis_kelamin, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' AND id_user='".$_SESSION['id_user']."' GROUP BY jenis_kelamin";
+                        $query3 = mysqli_query($config, $qry);
 
-                $qry2 = "SELECT agama, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' AND id_user='" . $_SESSION['id_user'] . "'GROUP BY agama";
-                $query2 = mysqli_query($config, $qry2);
+                        $qry2 = "SELECT agama, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' AND id_user='".$_SESSION['id_user']."'GROUP BY agama";
+                        $query2 = mysqli_query($config, $qry2); 
 
-                $qry3 = "SELECT keterangan, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' AND id_user='" . $_SESSION['id_user'] . "'GROUP BY keterangan";
-                $query3 = mysqli_query($config, $qry3);
+                        $qry3 = "SELECT keterangan, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' AND id_user='".$_SESSION['id_user']."'GROUP BY keterangan";
+                        $query3 = mysqli_query($config, $qry3);
 
-                $qry4 = "SELECT status_perkawinan, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' AND id_user='" . $_SESSION['id_user'] . "'GROUP BY status_perkawinan";
-                $query4 = mysqli_query($config, $qry4);
+                        $qry4 = "SELECT status_perkawinan, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' AND id_user='".$_SESSION['id_user']."'GROUP BY status_perkawinan";
+                        $query4 = mysqli_query($config, $qry4);
 
-                $qry5 = "SELECT klinik, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' AND id_user='" . $_SESSION['id_user'] . "'GROUP BY klinik";
-                $query5 = mysqli_query($config, $qry5);
-            } else {
-                $qry = "SELECT jenis_kelamin, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' GROUP BY jenis_kelamin";
-                $query = mysqli_query($config, $qry);
+                        $qry5 = "SELECT klinik, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' AND id_user='".$_SESSION['id_user']."'GROUP BY klinik";
+                        $query5 = mysqli_query($config, $qry5);
 
-                $qry2 = "SELECT agama, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' GROUP BY agama";
-                $query2 = mysqli_query($config, $qry2);
+                    } else {
+                        $qry = "SELECT jenis_kelamin, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' GROUP BY jenis_kelamin";
+                        $query = mysqli_query($config, $qry);
 
-                $qry3 = "SELECT keterangan, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' GROUP BY keterangan";
-                $query3 = mysqli_query($config, $qry3);
+                        $qry2 = "SELECT agama, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' GROUP BY agama";
+                        $query2 = mysqli_query($config, $qry2); 
 
-                $qry4 = "SELECT status_perkawinan, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' GROUP BY status_perkawinan";
-                $query4 = mysqli_query($config, $qry4);
+                        $qry3 = "SELECT keterangan, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' GROUP BY keterangan";
+                        $query3 = mysqli_query($config, $qry3);
 
-                $qry5 = "SELECT klinik, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' GROUP BY klinik";
-                $query5 = mysqli_query($config, $qry5);
-            }
-?>
+                        $qry4 = "SELECT status_perkawinan, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' GROUP BY status_perkawinan";
+                        $query4 = mysqli_query($config, $qry4);
 
-            <div class="row">
-                <div class="col s4">
-                    <div id="chart-bar-1"></div>
+                        $qry5 = "SELECT klinik, COUNT(*) AS jumlah FROM tbl_surat_masuk WHERE tgl_diterima BETWEEN '$dari_tanggal' AND '$sampai_tanggal' GROUP BY klinik";
+                        $query5 = mysqli_query($config, $qry5);
+
+                    }
+                ?>
+                
+                <div class="row">
+                    <div class="col s4">
+                        <div id="chart-bar-1"></div>
+                    </div>
+                    <div class="col s4">
+                        <div id="chart-pie-1"></div>
+                    </div>
                 </div>
-                <div class="col s4">
-                    <div id="chart-pie-1"></div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col s4">
-                    <div id="chart-bar-2"></div>
+                 <div class="row">
+                    <div class="col s4">
+                        <div id="chart-bar-2"></div>
+                    </div>
+                    <div class="col s4">
+                        <div id="chart-pie-2"></div>
+                    </div>
                 </div>
-                <div class="col s4">
-                    <div id="chart-pie-2"></div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col s4">
-                    <div id="chart-bar-3"></div>
+                <div class="row">
+                    <div class="col s4">
+                        <div id="chart-bar-3"></div>
+                    </div>
+                    <div class="col s4">
+                        <div id="chart-pie-3"></div>
+                    </div>
                 </div>
-                <div class="col s4">
-                    <div id="chart-pie-3"></div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col s4">
-                    <div id="chart-bar-4"></div>
+                <div class="row">
+                    <div class="col s4">
+                        <div id="chart-bar-4"></div>
+                    </div>
+                    <div class="col s4">
+                        <div id="chart-pie-4"></div>
+                    </div>
                 </div>
-                <div class="col s4">
-                    <div id="chart-pie-4"></div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col s4">
-                    <div id="chart-bar-5"></div>
+                <div class="row">
+                    <div class="col s4">
+                        <div id="chart-bar-5"></div>
+                    </div>
+                    <div class="col s4">
+                        <div id="chart-pie-5"></div>
+                    </div>
                 </div>
-                <div class="col s4">
-                    <div id="chart-pie-5"></div>
-                </div>
-            </div>
 
-            <script type="text/javascript">
-                var chart1; // globally available
-                $(document).ready(function() {
-                    Highcharts.setOptions({
-                        colors: ['#0984e3', '#ff7675']
-                    });
-
-                    chart1 = new Highcharts.Chart({
-                        chart: {
+                <script type="text/javascript">  
+                    var chart1; // globally available
+                    $(document).ready(function() {
+                        Highcharts.setOptions({
+                                colors: ['#0984e3', '#ff7675']
+                            });
+                    
+                      chart1 = new Highcharts.Chart({
+                         chart: {
                             renderTo: 'chart-bar-1',
                             type: 'column'
-                        },
-                        title: {
+                         },   
+                         title: {
                             text: 'Jenis Kelamin'
-                        },
-                        xAxis: {
+                         },
+                         xAxis: {
                             categories: ['Jenis Kelamin']
-                        },
-                        yAxis: {
+                         },
+                         yAxis: {
                             title: {
-                                text: 'Jumlah'
+                               text: 'Jumlah'
                             }
                         },
                         legend: {
@@ -245,88 +247,91 @@ if (empty($_SESSION['admin'])) {
                                 }
                             }
                         },
-                        series: [
-                            <?php
-
-                            while ($row = mysqli_fetch_array($query)) { ?> {
-                                    name: '<?php echo $row['jenis_kelamin']; ?>',
-                                    data: [<?php echo round($row['jumlah'], 2); ?>]
-                                },
-                            <?php } ?>
-                        ]
-                    });
-                });
-
-                $(function() {
-
-
-                    var chart1;
-
-                    $(document).ready(function() {
-                        chart1 = new Highcharts.setOptions({
-                            colors: ['#0984e3', '#ff7675']
-                        });
-                        // Build the chart
-                        chart1 = new Highcharts.Chart({
-                            chart: {
-                                renderTo: 'chart-pie-1',
-                                plotBackgroundColor: null,
-                                plotBorderWidth: null,
-                                plotShadow: false
-                            },
-                            title: {
-                                text: 'PIE Jenis Kelamin'
-                            },
-                            tooltip: {
-                                pointFormat: '<b>{point.percentage}%</b>',
-                                percentageDecimals: 1
-                            },
-                            plotOptions: {
-                                pie: {
-                                    allowPointSelect: true,
-                                    cursor: 'pointer',
-                                    dataLabels: {
-                                        enabled: true
+                        series:             
+                            [
+                                <?php
+                                   
+                                    while($row = mysqli_fetch_array($query)){ ?>
+                                    {
+                                        name: '<?php echo $row['jenis_kelamin']; ?>',
+                                        data: [<?php echo round($row['jumlah'],2); ?>]
                                     },
-                                    showInLegend: true
-                                }
-                            },
-                            series: [{
-                                type: 'pie',
-                                name: '',
-                                data: [
-                                    <?php $query1 = mysqli_query($config, $qry);
-                                    while ($row = mysqli_fetch_array($query1)) { ?>['<?php echo $row['jenis_kelamin']; ?>', <?php echo $row['jumlah']; ?>],
-                                    <?php } ?>
-                                ]
-                            }]
+                                <?php } ?>
+                            ]
+                      });
+                    });  
+               
+                    $(function () {
+                       
+                        
+                        var chart1;
+                        
+                        $(document).ready(function () {
+                            chart1 = new Highcharts.setOptions({
+                                colors: ['#0984e3', '#ff7675']
+                            });
+                            // Build the chart
+                            chart1 = new Highcharts.Chart({
+                                chart: {
+                                    renderTo: 'chart-pie-1',
+                                    plotBackgroundColor: null,
+                                    plotBorderWidth: null,
+                                    plotShadow: false
+                                },
+                                title: {
+                                    text: 'PIE Jenis Kelamin'
+                                },
+                                tooltip: {
+                                    pointFormat: '<b>{point.percentage}%</b>',
+                                    percentageDecimals: 1
+                                },
+                                plotOptions: {
+                                    pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: true
+                                        },
+                                        showInLegend: true
+                                    }
+                                },
+                                series: [{
+                                    type: 'pie',
+                                    name: '',
+                                    data: [
+                                        <?php $query1 = mysqli_query($config, $qry);
+                                            while($row = mysqli_fetch_array($query1)){ ?>
+                                        ['<?php echo $row['jenis_kelamin']; ?>' , <?php echo $row['jumlah']; ?>],
+                                        <?php } ?>
+                                    ]
+                                }]
+                            });
                         });
+                        
                     });
+                </script> 
 
-                });
-            </script>
-
-            <script type="text/javascript">
-                var chart2; // globally available
-                $(document).ready(function() {
-                    Highcharts.setOptions({
-                        colors: ['#1abc9c', '#95a5a6', '#3498db', '#f1c40f', '#3498db', '#9b59b6']
-                    });
-
-                    chart2 = new Highcharts.Chart({
-                        chart: {
+                <script type="text/javascript">  
+                    var chart2; // globally available
+                    $(document).ready(function() {
+                        Highcharts.setOptions({
+                                colors: ['#1abc9c', '#95a5a6','#3498db','#f1c40f','#3498db','#9b59b6']
+                            });
+                    
+                      chart2 = new Highcharts.Chart({
+                         chart: {
                             renderTo: 'chart-bar-2',
                             type: 'column'
-                        },
-                        title: {
+                         },   
+                         title: {
                             text: 'Agama'
-                        },
-                        xAxis: {
+                         },
+                         xAxis: {
                             categories: ['Agama']
-                        },
-                        yAxis: {
+                         },
+                         yAxis: {
                             title: {
-                                text: 'Jumlah'
+                               text: 'Jumlah'
                             }
                         },
                         legend: {
@@ -341,88 +346,91 @@ if (empty($_SESSION['admin'])) {
                                 }
                             }
                         },
-                        series: [
-                            <?php
-
-                            while ($row = mysqli_fetch_array($query2)) { ?> {
-                                    name: '<?php echo $row['agama']; ?>',
-                                    data: [<?php echo round($row['jumlah'], 2); ?>]
-                                },
-                            <?php } ?>
-                        ]
-                    });
-                });
-
-                $(function() {
-
-
-                    var chart2;
-
-                    $(document).ready(function() {
-                        chart2 = new Highcharts.setOptions({
-                            colors: ['#1abc9c', '#95a5a6', '#3498db', '#f1c40f', '#3498db', '#9b59b6']
-                        });
-                        // Build the chart
-                        chart2 = new Highcharts.Chart({
-                            chart: {
-                                renderTo: 'chart-pie-2',
-                                plotBackgroundColor: null,
-                                plotBorderWidth: null,
-                                plotShadow: false
-                            },
-                            title: {
-                                text: 'Agama'
-                            },
-                            tooltip: {
-                                pointFormat: '<b>{point.percentage}%</b>',
-                                percentageDecimals: 1
-                            },
-                            plotOptions: {
-                                pie: {
-                                    allowPointSelect: true,
-                                    cursor: 'pointer',
-                                    dataLabels: {
-                                        enabled: true
+                        series:             
+                            [
+                                <?php
+                                   
+                                    while($row = mysqli_fetch_array($query2)){ ?>
+                                    {
+                                        name: '<?php echo $row['agama']; ?>',
+                                        data: [<?php echo round($row['jumlah'],2); ?>]
                                     },
-                                    showInLegend: true
-                                }
-                            },
-                            series: [{
-                                type: 'pie',
-                                name: '',
-                                data: [
-                                    <?php $query2 = mysqli_query($config, $qry2);
-                                    while ($row = mysqli_fetch_array($query2)) { ?>['<?php echo $row['agama']; ?>', <?php echo $row['jumlah']; ?>],
-                                    <?php } ?>
-                                ]
-                            }]
+                                <?php } ?>
+                            ]
+                      });
+                    });  
+               
+                    $(function () {
+                        
+                        
+                        var chart2;
+                        
+                        $(document).ready(function () {
+                            chart2 = new Highcharts.setOptions({
+                                colors: ['#1abc9c', '#95a5a6','#3498db','#f1c40f','#3498db','#9b59b6']
+                            });
+                            // Build the chart
+                            chart2 = new Highcharts.Chart({
+                                chart: {
+                                    renderTo: 'chart-pie-2',
+                                    plotBackgroundColor: null,
+                                    plotBorderWidth: null,
+                                    plotShadow: false
+                                },
+                                title: {
+                                    text: 'Agama'
+                                },
+                                tooltip: {
+                                    pointFormat: '<b>{point.percentage}%</b>',
+                                    percentageDecimals: 1
+                                },
+                                plotOptions: {
+                                    pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: true
+                                        },
+                                        showInLegend: true
+                                    }
+                                },
+                                series: [{
+                                    type: 'pie',
+                                    name: '',
+                                    data: [
+                                        <?php $query2 = mysqli_query($config, $qry2);
+                                            while($row = mysqli_fetch_array($query2)){ ?>
+                                        ['<?php echo $row['agama']; ?>' , <?php echo $row['jumlah']; ?>],
+                                        <?php } ?>
+                                    ]
+                                }]
+                            });
                         });
+                        
                     });
+                </script> 
 
-                });
-            </script>
-
-            <script type="text/javascript">
-                var chart3; // globally available
-                $(document).ready(function() {
-                    Highcharts.setOptions({
-                        colors: ['#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a', '#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a']
-                    });
-
-                    chart3 = new Highcharts.Chart({
-                        chart: {
+                <script type="text/javascript">  
+                    var chart3; // globally available
+                    $(document).ready(function() {
+                        Highcharts.setOptions({
+                                colors: ['#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a', '#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a']
+                            });
+                    
+                      chart3 = new Highcharts.Chart({
+                         chart: {
                             renderTo: 'chart-bar-3',
                             type: 'column'
-                        },
-                        title: {
+                         },   
+                         title: {
                             text: 'Suku'
-                        },
-                        xAxis: {
+                         },
+                         xAxis: {
                             categories: ['Suku']
-                        },
-                        yAxis: {
+                         },
+                         yAxis: {
                             title: {
-                                text: 'Jumlah'
+                               text: 'Jumlah'
                             }
                         },
                         legend: {
@@ -437,88 +445,91 @@ if (empty($_SESSION['admin'])) {
                                 }
                             }
                         },
-                        series: [
-                            <?php
-
-                            while ($row = mysqli_fetch_array($query3)) { ?> {
-                                    name: '<?php echo $row['keterangan']; ?>',
-                                    data: [<?php echo round($row['jumlah'], 2); ?>]
-                                },
-                            <?php } ?>
-                        ]
-                    });
-                });
-
-                $(function() {
-
-
-                    var chart3;
-
-                    $(document).ready(function() {
-                        chart3 = new Highcharts.setOptions({
-                            colors: ['#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a', '#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a']
-                        });
-                        // Build the chart
-                        chart3 = new Highcharts.Chart({
-                            chart: {
-                                renderTo: 'chart-pie-3',
-                                plotBackgroundColor: null,
-                                plotBorderWidth: null,
-                                plotShadow: false
-                            },
-                            title: {
-                                text: 'Suku'
-                            },
-                            tooltip: {
-                                pointFormat: '<b>{point.percentage}%</b>',
-                                percentageDecimals: 1
-                            },
-                            plotOptions: {
-                                pie: {
-                                    allowPointSelect: true,
-                                    cursor: 'pointer',
-                                    dataLabels: {
-                                        enabled: true
+                        series:             
+                            [
+                                <?php
+                                   
+                                    while($row = mysqli_fetch_array($query3)){ ?>
+                                    {
+                                        name: '<?php echo $row['keterangan']; ?>',
+                                        data: [<?php echo round($row['jumlah'],2); ?>]
                                     },
-                                    showInLegend: true
-                                }
-                            },
-                            series: [{
-                                type: 'pie',
-                                name: '',
-                                data: [
-                                    <?php $query3 = mysqli_query($config, $qry3);
-                                    while ($row = mysqli_fetch_array($query3)) { ?>['<?php echo $row['keterangan']; ?>', <?php echo $row['jumlah']; ?>],
-                                    <?php } ?>
-                                ]
-                            }]
+                                <?php } ?>
+                            ]
+                      });
+                    });  
+               
+                    $(function () {
+                       
+                        
+                        var chart3;
+                        
+                        $(document).ready(function () {
+                            chart3 = new Highcharts.setOptions({
+                                colors: ['#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a', '#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a']
+                            });
+                            // Build the chart
+                            chart3 = new Highcharts.Chart({
+                                chart: {
+                                    renderTo: 'chart-pie-3',
+                                    plotBackgroundColor: null,
+                                    plotBorderWidth: null,
+                                    plotShadow: false
+                                },
+                                title: {
+                                    text: 'Suku'
+                                },
+                                tooltip: {
+                                    pointFormat: '<b>{point.percentage}%</b>',
+                                    percentageDecimals: 1
+                                },
+                                plotOptions: {
+                                    pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: true
+                                        },
+                                        showInLegend: true
+                                    }
+                                },
+                                series: [{
+                                    type: 'pie',
+                                    name: '',
+                                    data: [
+                                        <?php $query3 = mysqli_query($config, $qry3);
+                                            while($row = mysqli_fetch_array($query3)){ ?>
+                                        ['<?php echo $row['keterangan']; ?>' , <?php echo $row['jumlah']; ?>],
+                                        <?php } ?>
+                                    ]
+                                }]
+                            });
                         });
+                        
                     });
+                </script> 
 
-                });
-            </script>
-
-            <script type="text/javascript">
-                var chart4; // globally available
-                $(document).ready(function() {
-                    Highcharts.setOptions({
-                        colors: ['#0984e3', '#ff7675']
-                    });
-
-                    chart4 = new Highcharts.Chart({
-                        chart: {
+                <script type="text/javascript">  
+                    var chart4; // globally available
+                    $(document).ready(function() {
+                        Highcharts.setOptions({
+                                colors: ['#0984e3', '#ff7675']
+                            });
+                    
+                      chart4 = new Highcharts.Chart({
+                         chart: {
                             renderTo: 'chart-bar-4',
                             type: 'column'
-                        },
-                        title: {
+                         },   
+                         title: {
                             text: 'Status Perkawinan'
-                        },
-                        xAxis: {
+                         },
+                         xAxis: {
                             categories: ['Status Perkawinan']
-                        },
-                        yAxis: {
+                         },
+                         yAxis: {
                             title: {
-                                text: 'Jumlah'
+                               text: 'Jumlah'
                             }
                         },
                         legend: {
@@ -533,88 +544,91 @@ if (empty($_SESSION['admin'])) {
                                 }
                             }
                         },
-                        series: [
-                            <?php
-
-                            while ($row = mysqli_fetch_array($query4)) { ?> {
-                                    name: '<?php echo $row['status_perkawinan']; ?>',
-                                    data: [<?php echo round($row['jumlah'], 2); ?>]
-                                },
-                            <?php } ?>
-                        ]
-                    });
-                });
-
-                $(function() {
-
-
-                    var chart4;
-
-                    $(document).ready(function() {
-                        chart4 = new Highcharts.setOptions({
-                            colors: ['#0984e3', '#ff7675']
-                        });
-                        // Build the chart
-                        chart4 = new Highcharts.Chart({
-                            chart: {
-                                renderTo: 'chart-pie-4',
-                                plotBackgroundColor: null,
-                                plotBorderWidth: null,
-                                plotShadow: false
-                            },
-                            title: {
-                                text: 'Status Perkawinan'
-                            },
-                            tooltip: {
-                                pointFormat: '<b>{point.percentage}%</b>',
-                                percentageDecimals: 1
-                            },
-                            plotOptions: {
-                                pie: {
-                                    allowPointSelect: true,
-                                    cursor: 'pointer',
-                                    dataLabels: {
-                                        enabled: true
+                        series:             
+                            [
+                                <?php
+                                   
+                                    while($row = mysqli_fetch_array($query4)){ ?>
+                                    {
+                                        name: '<?php echo $row['status_perkawinan']; ?>',
+                                        data: [<?php echo round($row['jumlah'],2); ?>]
                                     },
-                                    showInLegend: true
-                                }
-                            },
-                            series: [{
-                                type: 'pie',
-                                name: '',
-                                data: [
-                                    <?php $query4 = mysqli_query($config, $qry4);
-                                    while ($row = mysqli_fetch_array($query4)) { ?>['<?php echo $row['status_perkawinan']; ?>', <?php echo $row['jumlah']; ?>],
-                                    <?php } ?>
-                                ]
-                            }]
+                                <?php } ?>
+                            ]
+                      });
+                    });  
+               
+                    $(function () {
+                       
+                        
+                        var chart4;
+                        
+                        $(document).ready(function () {
+                            chart4 = new Highcharts.setOptions({
+                                colors: ['#0984e3', '#ff7675']
+                            });
+                            // Build the chart
+                            chart4 = new Highcharts.Chart({
+                                chart: {
+                                    renderTo: 'chart-pie-4',
+                                    plotBackgroundColor: null,
+                                    plotBorderWidth: null,
+                                    plotShadow: false
+                                },
+                                title: {
+                                    text: 'Status Perkawinan'
+                                },
+                                tooltip: {
+                                    pointFormat: '<b>{point.percentage}%</b>',
+                                    percentageDecimals: 1
+                                },
+                                plotOptions: {
+                                    pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: true
+                                        },
+                                        showInLegend: true
+                                    }
+                                },
+                                series: [{
+                                    type: 'pie',
+                                    name: '',
+                                    data: [
+                                        <?php $query4 = mysqli_query($config, $qry4);
+                                            while($row = mysqli_fetch_array($query4)){ ?>
+                                        ['<?php echo $row['status_perkawinan']; ?>' , <?php echo $row['jumlah']; ?>],
+                                        <?php } ?>
+                                    ]
+                                }]
+                            });
                         });
+                        
                     });
+                </script> 
 
-                });
-            </script>
-
-            <script type="text/javascript">
-                var chart5; // globally available
-                $(document).ready(function() {
-                    Highcharts.setOptions({
-                        colors: ['#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a', '#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a']
-                    });
-
-                    chart5 = new Highcharts.Chart({
-                        chart: {
+                <script type="text/javascript">  
+                    var chart5; // globally available
+                    $(document).ready(function() {
+                        Highcharts.setOptions({
+                                colors: ['#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a', '#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a']
+                            });
+                    
+                      chart5 = new Highcharts.Chart({
+                         chart: {
                             renderTo: 'chart-bar-5',
                             type: 'column'
-                        },
-                        title: {
+                         },   
+                         title: {
                             text: 'Klinik'
-                        },
-                        xAxis: {
+                         },
+                         xAxis: {
                             categories: ['Klinik']
-                        },
-                        yAxis: {
+                         },
+                         yAxis: {
                             title: {
-                                text: 'Jumlah'
+                               text: 'Jumlah'
                             }
                         },
                         legend: {
@@ -629,72 +643,75 @@ if (empty($_SESSION['admin'])) {
                                 }
                             }
                         },
-                        series: [
-                            <?php
-
-                            while ($row = mysqli_fetch_array($query5)) { ?> {
-                                    name: '<?php echo $row['klinik']; ?>',
-                                    data: [<?php echo round($row['jumlah'], 2); ?>]
-                                },
-                            <?php } ?>
-                        ]
-                    });
-                });
-
-                $(function() {
-
-
-                    var chart5;
-
-                    $(document).ready(function() {
-                        chart5 = new Highcharts.setOptions({
-                            colors: ['#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a', '#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a']
-                        });
-                        // Build the chart
-                        chart5 = new Highcharts.Chart({
-                            chart: {
-                                renderTo: 'chart-pie-5',
-                                plotBackgroundColor: null,
-                                plotBorderWidth: null,
-                                plotShadow: false
-                            },
-                            title: {
-                                text: 'Klinik'
-                            },
-                            tooltip: {
-                                pointFormat: '<b>{point.percentage}%</b>',
-                                percentageDecimals: 1
-                            },
-                            plotOptions: {
-                                pie: {
-                                    allowPointSelect: true,
-                                    cursor: 'pointer',
-                                    dataLabels: {
-                                        enabled: true
+                        series:             
+                            [
+                                <?php
+                                   
+                                    while($row = mysqli_fetch_array($query5)){ ?>
+                                    {
+                                        name: '<?php echo $row['klinik']; ?>',
+                                        data: [<?php echo round($row['jumlah'],2); ?>]
                                     },
-                                    showInLegend: true
-                                }
-                            },
-                            series: [{
-                                type: 'pie',
-                                name: '',
-                                data: [
-                                    <?php $query5 = mysqli_query($config, $qry5);
-                                    while ($row = mysqli_fetch_array($query5)) { ?>['<?php echo $row['klinik']; ?>', <?php echo $row['jumlah']; ?>],
-                                    <?php } ?>
-                                ]
-                            }]
+                                <?php } ?>
+                            ]
+                      });
+                    });  
+               
+                    $(function () {
+                       
+                        
+                        var chart5;
+                        
+                        $(document).ready(function () {
+                            chart5 = new Highcharts.setOptions({
+                                colors: ['#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a', '#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a']
+                            });
+                            // Build the chart
+                            chart5 = new Highcharts.Chart({
+                                chart: {
+                                    renderTo: 'chart-pie-5',
+                                    plotBackgroundColor: null,
+                                    plotBorderWidth: null,
+                                    plotShadow: false
+                                },
+                                title: {
+                                    text: 'Klinik'
+                                },
+                                tooltip: {
+                                    pointFormat: '<b>{point.percentage}%</b>',
+                                    percentageDecimals: 1
+                                },
+                                plotOptions: {
+                                    pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: true
+                                        },
+                                        showInLegend: true
+                                    }
+                                },
+                                series: [{
+                                    type: 'pie',
+                                    name: '',
+                                    data: [
+                                        <?php $query5 = mysqli_query($config, $qry5);
+                                            while($row = mysqli_fetch_array($query5)){ ?>
+                                        ['<?php echo $row['klinik']; ?>' , <?php echo $row['jumlah']; ?>],
+                                        <?php } ?>
+                                    ]
+                                }]
+                            });
                         });
+                        
                     });
+                </script>
 
-                });
-            </script>
+                            <?php } ?>
 
-        <?php } ?>
+                        <?php } else {
 
-<?php } else {
-
-        echo '
+                            echo '
                                 <!-- Row Start -->
                                 <div class="row">
                                     <!-- Secondary Nav START -->
@@ -734,6 +751,6 @@ if (empty($_SESSION['admin'])) {
                                     </form>
                                 </div>
                                 <!-- Row form END -->';
-    }
-}
-?>
+                        }
+                    }
+                ?>

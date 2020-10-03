@@ -74,16 +74,16 @@
             $aktip = true;
             $dari_tanggal = $_SESSION['sampai_tanggal'];
         }
-        if(isset($_REQUEST['simpan-klinik']) && !empty($_REQUEST['klinik'])){
+        if(isset($_REQUEST['SUBMIT-klinik']) && !empty($_REQUEST['klinik'])){
             $aktip = true;
             $_SESSION['klinik'] =  $_REQUEST['klinik'];
-        }else if(isset($_REQUEST['simpan-klinik']) && empty($_REQUEST['klinik'])){
+        }else if(isset($_REQUEST['SUBMIT-klinik']) && empty($_REQUEST['klinik'])){
             unset($_SESSION['klinik']);
         }
-        if(isset($_REQUEST['simpan-kota']) && !empty($_REQUEST['kota'])){
+        if(isset($_REQUEST['SUBMIT-kota']) && !empty($_REQUEST['kota'])){
             $aktip = true;
             $_SESSION['kota'] =  $_REQUEST['kota'];
-        }else if (isset($_REQUEST['simpan-kota']) && empty($_REQUEST['kota'])){
+        }else if (isset($_REQUEST['SUBMIT-kota']) && empty($_REQUEST['kota'])){
             unset($_SESSION['kota']);
         }
         if(isset($_REQUEST['submit']) || $aktip){
@@ -232,8 +232,8 @@
                                                            
                                                           </div>
                                                             <div class="modal-footer white">
-                                                                <button type="submit" class="modal-action waves-effect waves-green btn-flat" name="simpan-kota">Simpan</button>';
-                                                                if(isset($_REQUEST['simpan-kota'])){ 
+                                                                <button type="submit" class="modal-action waves-effect waves-green btn-flat" name="SUBMIT-kota">SUBMIT</button>';
+                                                                if(isset($_REQUEST['SUBMIT-kota'])){ 
                                                                     if(isset($_REQUEST['kota']) && !empty($_REQUEST['kota'])){
                                                                         $_SESSION['kota'] =  $_REQUEST['kota'];
                                                                     } else if(isset($_REQUEST['kota']) && empty($_REQUEST['kota'])){
@@ -288,7 +288,7 @@
                                                            
                                                           </div>
                                                             <div class="modal-footer white">
-                                                                <button type="submit" class="modal-action waves-effect waves-green btn-flat" name="simpan-klinik">Simpan</button>
+                                                                <button type="submit" class="modal-action waves-effect waves-green btn-flat" name="SUBMIT-klinik">SUBMIT</button>
                                                                
                                                                 <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Batal</a>
                                                             </div>

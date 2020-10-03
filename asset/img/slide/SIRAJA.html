@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>SIRAJA</title>
+
+        <!-- Meta START -->
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script type="text/javascript" src="./SIRAJA_files/highcharts.js.download"></script>
+        <script type="text/javascript" src="./SIRAJA_files/data.js.download"></script>
+        <script type="text/javascript" src="./SIRAJA_files/drilldown.js.download"></script>
+        <script type="text/javascript" src="./SIRAJA_files/exporting.js.download"></script>
+        <script type="text/javascript" src="./SIRAJA_files/export-data.js.download"></script>
+        <script type="text/javascript" src="./SIRAJA_files/accessibility.js.download"></script>
+        <link rel="shortcut icon" href="./SIRAJA_files/Logo_BNN_kepri.png">        <!-- Meta END -->
+
+        <!--[if lt IE 9]>
+    <script src="../asset/js/html5shiv.min.js"></script>
+    <![endif]-->
+
+
+        <style>
+            * {
+                box-sizing: border-box
+            }
+
+            body {
+                font-family: Verdana, sans-serif;
+                margin: 0
+            }
+
+            .mySlides {
+                display: none
+            }
+
+            img {
+                vertical-align: middle;
+            }
+
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+
+            /* Next & previous buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            /* Caption text */
+            .text {
+                color: #f2f2f2;
+                font-size: 15px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            .active,
+            .dot:hover {
+                background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade {
+                from {
+                    opacity: .4
+                }
+
+                to {
+                    opacity: 1
+                }
+            }
+
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+
+                to {
+                    opacity: 1
+                }
+            }
+
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+
+                .prev,
+                .next,
+                .text {
+                    font-size: 11px
+                }
+            }
+        </style>
+
+
+
+        <!-- Global style START -->
+        <link type="text/css" rel="stylesheet" href="./SIRAJA_files/materialize.min.css">
+        <style type="text/css">
+            body {
+                background: #fff;
+            }
+
+            .bg::before {
+                content: '';
+                background-image: url('./asset/img/background.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+                position: fixed;
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                opacity: 0.5;
+                filter: alpha(opacity=5);
+            }
+
+            #header-instansi {
+                margin-top: 1%;
+            }
+
+            .ams {
+                font-size: 1.8rem;
+            }
+
+            .grs {
+                position: absolute;
+                margin: 10px 0;
+                background-color: #fff;
+                height: 42px;
+                width: 1px;
+            }
+
+            #menu {
+                margin-left: 20px;
+            }
+
+            .title {
+                background: #333;
+                border-radius: 3px 3px 0 0;
+                margin: -20px -20px 25px;
+                padding: 20px;
+            }
+
+            .logo {
+                border-radius: 50%;
+                margin: 0 15px 15px 0;
+                width: 90px;
+                height: 90px;
+            }
+
+            .logoside {
+                border-radius: 50%;
+                margin: 0 auto;
+                width: 125px;
+                height: 125px;
+            }
+
+            .ins {
+                font-size: 1.8rem;
+            }
+
+            .almt {
+                font-size: 1.15rem;
+            }
+
+            .description {
+                font-size: 1.4rem;
+            }
+
+            .jarak {
+                height: 13.4rem;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            .add {
+                font-size: 1.45rem;
+                padding: 0.1rem 0;
+            }
+
+            .jarak-card {
+                margin-top: 1rem;
+            }
+
+            .jarak-filter {
+                margin: -12px 0 5px;
+            }
+
+            #footer {
+                background: #546e7a;
+            }
+
+            .warna {
+                color: #444;
+            }
+
+            .agenda {
+                font-size: 1.39rem;
+                padding-left: 8px;
+            }
+
+            .hid {
+                display: none;
+            }
+
+            .galeri {
+                width: 100%;
+                height: 26rem;
+            }
+
+            .gbr {
+                float: right;
+                width: 80%;
+                height: auto;
+            }
+
+            .file {
+                width: 70%;
+                height: auto;
+            }
+
+            .kata {
+                font-size: 1.04rem;
+            }
+
+            #alert-message {
+                font-size: 0.9rem;
+            }
+
+            .notif {
+                margin: -1rem 0 !important;
+            }
+
+            .green-text,
+            .red-text {
+                font-weight: normal !important;
+            }
+
+            .lampiran {
+                color: #444 !important;
+                font-weight: normal !important;
+            }
+
+            .waves-green {
+                margin-bottom: -20px !important;
+            }
+
+            .autocomplete-suggestions {
+                border: 1px solid #999;
+                background: #FFF;
+                overflow: auto;
+            }
+
+            .autocomplete-suggestion {
+                padding: 2px 5px;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            .autocomplete-selected {
+                background: #F0F0F0;
+            }
+
+            .autocomplete-suggestions strong {
+                font-weight: normal;
+                color: #3399FF;
+            }
+
+            .autocomplete-group {
+                padding: 2px 5px;
+            }
+
+            .autocomplete-group strong {
+                display: block;
+                border-bottom: 1px solid #000;
+            }
+
+            div.callout {
+                height: auto;
+                width: auto;
+                float: left;
+            }
+
+            div.callout {
+                position: relative;
+                padding: 13px;
+                border-radius: 3px;
+                margin: 25px;
+                min-height: 46px;
+                top: -25px;
+            }
+
+            .callout::before {
+                content: "";
+                width: 0px;
+                height: 0px;
+                border: 0.8em solid transparent;
+                position: absolute;
+            }
+
+            .callout.bottom::before {
+                left: 25px;
+                top: -20px;
+                border-bottom: 10px solid #ffcdd2;
+            }
+
+            .round-in-box>input {
+                color: inherit;
+            }
+
+            .round-in-box>input[type="search"] {
+                background: rgba(244, 244, 244, 0.5);
+                border-radius: 100px;
+            }
+
+            .dev {
+                padding-left: 1rem;
+            }
+
+            .pace {
+                -webkit-pointer-events: none;
+                pointer-events: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                -webkit-transform: translate3d(0, -50px, 0);
+                -ms-transform: translate3d(0, -50px, 0);
+                transform: translate3d(0, -50px, 0);
+                -webkit-transition: -webkit-transform .5s ease-out;
+                -ms-transition: -webkit-transform .5s ease-out;
+                transition: transform .5s ease-out;
+            }
+
+            .pace.pace-active {
+                -webkit-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+
+            .pace .pace-progress {
+                display: block;
+                position: fixed;
+                z-index: 2000;
+                top: 0;
+                right: 100%;
+                width: 100%;
+                height: 3px;
+                background: #2196f3;
+                pointer-events: none;
+            }
+
+            .footer-copyright {
+                line-height: 2.25;
+                padding: .75rem 0;
+            }
+
+            @media print {
+
+                .side-nav,
+                .secondary-nav,
+                .jarak-form,
+                .center,
+                .hide-on-med-and-down,
+                .dropdown-content,
+                .button-collapse,
+                .btn-large,
+                .footer-copyright {
+                    display: none;
+                }
+
+                body {
+                    font-size: 12px;
+                    color: #212121;
+                }
+
+                .hid {
+                    display: block;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    margin-bottom: 0;
+                }
+
+                .add {
+                    font-size: 15px !important;
+                }
+
+                .agenda {
+                    font-size: 13px;
+                    text-align: center;
+                    color: #212121;
+                }
+
+                th,
+                td {
+                    border: 1px solid #444 !important;
+                }
+
+                th {
+                    padding: 5px;
+                    display: table-cell;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+
+                td {
+                    padding: 5px;
+                }
+
+                table {
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    font-size: 12px;
+                    color: #212121;
+                }
+
+                .container {
+                    margin-top: -20px !important;
+                }
+            }
+
+            noscript {
+                color: #fff;
+            }
+
+            @media only screen and (max-width: 701px) {
+                #colres {
+                    width: 100%;
+                    overflow-x: scroll !important;
+                }
+
+                #tbl {
+                    width: 600px !important;
+                }
+            }
+        </style>
+        <!-- Global style END -->
+        <script type="text/javascript" src="./SIRAJA_files/jquery-2.1.1.min.js.download"></script>
+    </head>
+
+
+    <body class="bg  pace-done"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+        <header>
+            <div class="center"> Sistem Informasi Rehabilitasi Rawat Jalan </div>
+            <!-- Include Header Instansi START -->
+            <div class="center"> BNN PROV KEPRI</div>
+            <!-- Include Header Instansi END -->
+            <!-- Include Navigation START -->
+                
+
+
+    <nav class="purple darken-4">
+        <div class="nav-wrapper">
+            <a href="http://localhost/project000/" class="brand-logo center hide-on-large-only"><img src="./SIRAJA_files/logo_siraja.png" width="150" height="60">|</a>
+            <ul id="slide-out" class="side-nav" data-simplebar-direction="vertical">
+                <li class="no-padding">
+                    <div class="logo-side center blue-grey darken-3">
+                        <img class="logoside" src="./SIRAJA_files/Logo_BNN_kepri.png"><h5 class="smk-side">Sistem Informasi Rehabilitasi Rawat Jalan</h5><p class="description-side">Jalan Hang Jebat KM.3, Batu Besar, Nongsa, Batu Besar, Kecamatan Nongsa, Kota Batam, Kepulauan Riau 29465</p>                    </div>
+                </li>
+                <li class="no-padding blue-grey darken-4">
+                    <ul class="collapsible collapsible-accordion">
+                        <li>
+                            <a class="collapsible-header"><i class="material-icons">account_circle</i><br>
+<b>Notice</b>:  Undefined index: nama in <b>C:\xampp\htdocs\project000\include\menu.php</b> on line <b>44</b><br>
+</a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="http://localhost/project000/admin.php?page=pro">Profil</a></li>
+                                    <li><a href="http://localhost/project000/admin.php?page=pro&amp;sub=pass">Ubah Password</a></li>
+                                    <li><a href="http://localhost/project000/logout.php">Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="http://localhost/project000/"><i class="material-icons middle">dashboard</i> Beranda</a></li>
+                <!-- MENU LEVEL SUPERADMIN -->
+                                <!-- MENU KLINIK -->
+                
+                <!-- MENU DOKTER/KONSELOR -->
+                                <!-- MENU LEVEL Klien -->
+                                
+            </ul>
+            <!-- Menu on medium and small screen END -->
+
+            <!-- Menu on large screen START -->
+            <ul class="center hide-on-med-and-down" id="nv">
+                <li><a href="http://localhost/project000/" class="ams hide-on-med-and-down"><img src="./SIRAJA_files/logo_siraja.png" width="130" height="60"></a></li>
+                <li>
+                    <div class="grs">
+                        
+                </div></li>
+
+                <!-- MENU LEVEL SUPERADMIN -->
+                                    <li><a class="button" href="http://localhost/project000/admin.php?page=tsm" data-activates="transaksi">BNNP</a></li>
+                    <li><a class="dropdown-button" href="http://localhost/project000/admin.php?page=wkdm&amp;act=add#!" data-activates="pengaturan">BNNK <i class="material-icons md-18">arrow_drop_down</i></a></li>
+                    
+                    <li><a class="button" href="http://localhost/project000/admin.php?page=bk" data-activates="transaksi">IPWL Lainnya</a></li>
+                    <li><a class="button" href="http://localhost/project000/admin.php?page=wkdm" data-activates="transaksi">KLIEN/WALI</a></li>
+                    <li><a class="button" href="http://localhost/project000/admin.php?page=blm" data-activates="transaksi">Informasi</a></li>
+                    <li><a class="dropdown-button" href="http://localhost/project000/admin.php?page=wkdm&amp;act=add#!" data-activates="pengaturan">Lain-lain<i class="material-icons md-18">arrow_drop_down</i></a></li>
+                    
+
+                
+
+
+                <!-- MENU LEVEL KABID -->
+                        <!-- MENU KLINIK -->
+                <!-- MENU LEVEL DOKTER/KONSELOR -->
+                <!-- MENU LEVEL Klien -->
+        
+        <li class="right" style="margin-right: 10px;"><a class="dropdown-button" href="http://localhost/project000/admin.php?page=wkdm&amp;act=add#!" data-activates="logout"><i class="material-icons">account_circle</i> <br>
+<b>Notice</b>:  Undefined index: nama in <b>C:\xampp\htdocs\project000\include\menu.php</b> on line <b>270</b><br>
+<i class="material-icons md-18">arrow_drop_down</i></a></li>
+        
+        </ul>
+        <!-- Menu on large screen END -->
+        <a href="http://localhost/project000/admin.php?page=wkdm&amp;act=add#" data-activates="slide-out" class="button-collapse" id="menu"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+            <!-- Include Navigation END -->
+
+
+            <div class="card">
+
+                <marquee onmouseover="this.stop()" onmouseout="this.start()">
+
+                    <div class="text"> Selamat Datang <br>
+<b>Notice</b>:  Undefined index: nama in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>32</b><br>
+, Anda login sebagai
+                        Super Admin. Anda memiliki akses penuh terhadap sistem.                    </div>
+                </marquee>
+
+            </div>
+
+        </header>
+        <main>
+
+                        <!-- container START -->
+            <div class="container">
+                
+        <!-- Row Start -->
+        <div class="row">
+            <!-- Secondary Nav START -->
+            <div class="col s12">
+                <nav class="secondary-nav">
+                    <div class="nav-wrapper blue-grey darken-1">
+                        <ul class="left">
+                            <li class="waves-effect waves-light"><a href="http://localhost/project000/admin.php?page=tsm&amp;act=add" class="judul"><i class="material-icons">mail</i> Tambah Data Klien</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!-- Secondary Nav END -->
+        </div>
+        <!-- Row END -->
+
+        
+        <!-- Row form Start -->
+        <div class="row jarak-form">
+
+            <!-- Form START -->
+            <form class="col s12" method="POST" action="http://localhost/project000/admin.php?page=tsm&amp;act=add" enctype="multipart/form-data">
+
+                <!-- Row in form START -->
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix active">assignment_ind</i>
+                        <input id="nama" type="text" class="validate valid" name="nama" required="">
+                                                <label for="nama" class="active">Nama Lengkap</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix active">pin_drop</i>
+                        <input id="tempat_lahir" type="text" class="validate valid" name="tempat_lahir" required="">
+                                                <label for="tempat_lahir" class="active">Tempat lahir</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix">supervisor_account</i><label>Jenis Kelamin</label>
+                        <div class="input-field col s11 right">
+                            <div class="select-wrapper"><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-8060cf32-2812-ec1e-f1d8-16988455e48e" value="Laki-laki"><i class="mdi-navigation-arrow-drop-down active"></i><select class="validate initialized" name="jenis_kelamin" id="jenis_kelamin" required="">
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select></div>
+                        </div>
+                                            </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix">star_half</i><label>Agama</label>
+                        <div class="input-field col s11 right">
+                            <div class="select-wrapper"><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-81c1c26f-77a7-765d-04f5-3b760ea26128" value="Islam"><i class="mdi-navigation-arrow-drop-down active"></i><select class="validate initialized" name="agama" id="agama" required="">
+                                <option value="Islam">Islam</option>
+                                <option value="Keristen Protestan">Keristen Protestan</option>
+                                <option value="Kristen Katolik">Kristen Katolik</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Buddha">Buddha</option>
+                                <option value="Konghuchu">Konghuchu</option>
+                            </select></div>
+                        </div>
+                                            </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix">local_library</i><label>Suku</label>
+                        <div class="input-field col s11 right">
+                            <div class="select-wrapper"><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-50d8ac34-5fd7-fde5-9302-380f625d927d" value="Suku Jawa"><i class="mdi-navigation-arrow-drop-down active"></i><select class="validate initialized" name="keterangan" id="keterangan" required="">
+                                <option value="Suku Jawa">Suku Jawa</option>
+                                <option value="Suku Sunda">Suku Sunda</option>
+                                <option value="Suku Batak">Suku Batak</option>
+                                <option value="Suku Madura">Suku Madura</option>
+                                <option value="Suku Betawi">Suku Betawi</option>
+                                <option value="Suku Bugis">Suku Bugis</option>
+                                <option value="Suku Melayu">Suku Melayu</option>
+                                <option value="Suku Aceh">Suku Aceh</option>
+                                <option value="Suku Banten">Suku Banten</option>
+                                <option value="Suku Banjar">Suku Banjar</option>
+                                <option value="Suku Bali">Suku Bali</option>
+                                <option value="Suku Sasak">Suku Sasak</option>
+                                <option value="Suku Dayak">Suku Dayak</option>
+                                <option value="Suku Tionghoa">Suku Tionghoa</option>
+                                <option value="Suku Makassar">Suku Makassar</option>
+                                <option value="Suku kaili">Suku kaili</option>
+                                <option value="Suku Cirebon">Suku Cirebon</option>
+                                <option value="Suku Lain-lain">Suku Lain-lain</option>
+                            </select></div>
+                        </div>
+                                            </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix">supervisor_account</i><label>Status Perkawinan</label>
+                        <div class="input-field col s11 right">
+                            <div class="select-wrapper"><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-dbd499d5-f08e-e811-f3ce-4deea63f97bd" value="Menikah"><i class="mdi-navigation-arrow-drop-down active"></i><select class="validate initialized" name="status_perkawinan" id="status_perkawinan" required="">
+                                <option value="Menikah">Menikah</option>
+                                <option value="Lajang">Lajang</option>
+                            </select></div>
+                        </div>
+                                            </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix active">airline_seat_recline_normal</i>
+                        <input id="pekerjaan" type="text" class="validate valid" name="pekerjaan" required="">
+                                                <label for="pekerjaan" class="active">Pekerjaan</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix active">assistant_photo</i>
+                        <input id="kewarganegaraan" type="text" class="validate valid" name="kewarganegaraan" required="">
+                                                <label for="kewarganegaraan" class="active">Kewarganegaraan</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix active">looks_one</i>
+                        <input id="no_agenda" type="number" class="validate valid" name="no_agenda" value="8" required="">                        <label for="no_agenda" class="active">No. Rekam Medis (terisi otomatis)</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix active">phone_iphone</i>
+                        <input id="kode" type="text" class="validate valid" name="kode" required="" autocomplete="off">
+                                                <label for="kode" class="active">Nomor telp</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix active">place</i>
+                        <input id="asal_surat" type="text" class="validate valid" name="asal_surat" required="">
+                                                <label for="asal_surat" class="active">Alamat Lengkap</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix">place</i><label for="asal_surat">Klinik</label>
+                        <div class="input-field col s11 right">
+                            <div class="select-wrapper"><input type="text" class="select-dropdown" readonly="true" data-activates="select-options-5b2591b2-4ad3-d407-bcbc-6478d136b544" value="Pilih "><i class="mdi-navigation-arrow-drop-down active"></i><select class="validate initialized" name="klinik" id="klinik" required="">
+                                <option value="">Pilih </option>
+                                                                    <option value="3">Klink awalbros</option>
+                                                                    <option value="4">Klinik BNN Batam</option>
+                                                                    <option value="5">Klink Kimia Farma batu aji</option>
+                                                            </select></div>
+                        </div>
+
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix">filter_2</i>
+                        <input id="indeks" type="text" class="validate" name="indeks" required="">
+                                                <label for="indeks">Nomor KK</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix active">filter_3</i>
+                        <input id="no_surat" type="text" class="validate" name="no_surat" required="">
+                                                <label for="no_surat" class="active">Nomor NIK</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix">date_range</i>
+                        <input id="tgl_surat" type="text" name="tgl_surat" class="datepicker picker__input" required="" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="tgl_surat_root"><div class="picker" id="tgl_surat_root" tabindex="0" aria-hidden="true"><div class="picker__holder"><div class="picker__frame"><div class="picker__wrap"><div class="picker__box"><div class="picker__date-display"><div class="picker__weekday-display">Sabtu</div><div class="picker__month-display"><div>Oktober</div></div><div class="picker__day-display"><div>3</div></div><div class="picker__year-display"><div>2020</div></div></div><div class="picker__calendar-container"><div class="picker__header"><select class="picker__select--month browser-default" disabled="" aria-controls="tgl_surat_table" title="Select a month"><option value="0">Januari</option><option value="1">Februari</option><option value="2">Maret</option><option value="3">April</option><option value="4">Mei</option><option value="5">Juni</option><option value="6">Juli</option><option value="7">Agustus</option><option value="8">September</option><option value="9" selected="">Oktober</option><option value="10">November</option><option value="11">Desember</option></select><select class="picker__select--year browser-default" disabled="" aria-controls="tgl_surat_table" title="Select a year"><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020" selected="">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option><option value="2039">2039</option><option value="2040">2040</option><option value="2041">2041</option><option value="2042">2042</option><option value="2043">2043</option><option value="2044">2044</option><option value="2045">2045</option></select><div class="picker__nav--prev" data-nav="-1" role="button" aria-controls="tgl_surat_table" title="Previous month"> </div><div class="picker__nav--next" data-nav="1" role="button" aria-controls="tgl_surat_table" title="Next month"> </div></div><table class="picker__table" id="tgl_surat_table" role="grid" aria-controls="tgl_surat" aria-readonly="true"><thead><tr><th class="picker__weekday" scope="col" title="Minggu">M</th><th class="picker__weekday" scope="col" title="Senin">S</th><th class="picker__weekday" scope="col" title="Selasa">S</th><th class="picker__weekday" scope="col" title="Rabu">R</th><th class="picker__weekday" scope="col" title="Kamis">K</th><th class="picker__weekday" scope="col" title="Jum&#39;at">J</th><th class="picker__weekday" scope="col" title="Sabtu">S</th></tr></thead><tbody><tr><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1601139600000" role="gridcell" aria-label="2020-09-27">27</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1601226000000" role="gridcell" aria-label="2020-09-28">28</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1601312400000" role="gridcell" aria-label="2020-09-29">29</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1601398800000" role="gridcell" aria-label="2020-09-30">30</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1601485200000" role="gridcell" aria-label="2020-10-01">1</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1601571600000" role="gridcell" aria-label="2020-10-02">2</div></td><td role="presentation"><div class="picker__day picker__day--infocus picker__day--today picker__day--highlighted" data-pick="1601658000000" role="gridcell" aria-label="2020-10-03" aria-activedescendant="true">3</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1601744400000" role="gridcell" aria-label="2020-10-04">4</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1601830800000" role="gridcell" aria-label="2020-10-05">5</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1601917200000" role="gridcell" aria-label="2020-10-06">6</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1602003600000" role="gridcell" aria-label="2020-10-07">7</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1602090000000" role="gridcell" aria-label="2020-10-08">8</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1602176400000" role="gridcell" aria-label="2020-10-09">9</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1602262800000" role="gridcell" aria-label="2020-10-10">10</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1602349200000" role="gridcell" aria-label="2020-10-11">11</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1602435600000" role="gridcell" aria-label="2020-10-12">12</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1602522000000" role="gridcell" aria-label="2020-10-13">13</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1602608400000" role="gridcell" aria-label="2020-10-14">14</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1602694800000" role="gridcell" aria-label="2020-10-15">15</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1602781200000" role="gridcell" aria-label="2020-10-16">16</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1602867600000" role="gridcell" aria-label="2020-10-17">17</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1602954000000" role="gridcell" aria-label="2020-10-18">18</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1603040400000" role="gridcell" aria-label="2020-10-19">19</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1603126800000" role="gridcell" aria-label="2020-10-20">20</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1603213200000" role="gridcell" aria-label="2020-10-21">21</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1603299600000" role="gridcell" aria-label="2020-10-22">22</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1603386000000" role="gridcell" aria-label="2020-10-23">23</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1603472400000" role="gridcell" aria-label="2020-10-24">24</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1603558800000" role="gridcell" aria-label="2020-10-25">25</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1603645200000" role="gridcell" aria-label="2020-10-26">26</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1603731600000" role="gridcell" aria-label="2020-10-27">27</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1603818000000" role="gridcell" aria-label="2020-10-28">28</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1603904400000" role="gridcell" aria-label="2020-10-29">29</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1603990800000" role="gridcell" aria-label="2020-10-30">30</div></td><td role="presentation"><div class="picker__day picker__day--infocus" data-pick="1604077200000" role="gridcell" aria-label="2020-10-31">31</div></td></tr><tr><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1604163600000" role="gridcell" aria-label="2020-11-01">1</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1604250000000" role="gridcell" aria-label="2020-11-02">2</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1604336400000" role="gridcell" aria-label="2020-11-03">3</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1604422800000" role="gridcell" aria-label="2020-11-04">4</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1604509200000" role="gridcell" aria-label="2020-11-05">5</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1604595600000" role="gridcell" aria-label="2020-11-06">6</div></td><td role="presentation"><div class="picker__day picker__day--outfocus" data-pick="1604682000000" role="gridcell" aria-label="2020-11-07">7</div></td></tr></tbody></table></div><div class="picker__footer"><button class="btn-flat picker__today" type="button" data-pick="1601658000000" disabled="" aria-controls="tgl_surat">Hari Ini</button><button class="btn-flat picker__close" type="button" data-close="true" disabled="" aria-controls="tgl_surat">Tutup</button></div></div></div></div></div></div>
+                                                <label for="tgl_surat">Tanggal Lahir</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix md-prefix">send</i>
+                        <input id="isi" type="text" class="validate" name="isi" required="">
+                                                <label for="isi">Dikirim Oleh</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <div class="file-field input-field">
+                            <div class="btn light-green darken-1">
+                                <span>File</span>
+                                <input type="file" id="file" name="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Upload file KTP">
+                                                                <small class="red-text">*Format file yang diperbolehkan *.JPG, *.PNG, *.DOC, *.DOCX, *.PDF dan ukuran maksimal file 2 MB!</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <li class="divider"></li><br>
+                <!-- Row in form END -->
+
+                <div class="row">
+                    <div class="col 6">
+                        <a href="http://localhost/project000/admin.php?page=tsm" class="btn-large deep-orange waves-effect waves-light">BATAL <i class="material-icons">clear</i></a>
+                    </div>
+                    <div class="col 6">
+                        <button type="submit" name="submit" class="btn-large blue waves-effect waves-light">SUBMIT<i class="material-icons">forward</i></button>
+                    </div>
+
+                </div>
+
+            </form>
+            <!-- Form END -->
+
+        </div>
+        <!-- Row form END -->
+
+            </div>
+            <!-- container END -->
+
+        </main>
+        <!-- Main END -->
+
+        <!-- Include Footer START -->
+        
+<noscript>
+    <meta http-equiv="refresh" content="0;URL='./enable-javascript.html'" />
+</noscript>
+
+<!-- Footer START -->
+<footer class="page-footer">
+    <div class="container">
+           <div class="row">
+               <br>
+           </div>
+    </div>
+    <div class="footer-copyright blue-grey darken-1 white-text">
+        <div class="container" id="footer">
+                            <span class="white-text date">© 2020 Sistem Informasi Rehabilitasi Rawat Jalan</span>
+                                    </div>
+    </div>
+</footer>
+<!-- Footer END -->
+
+<!-- Javascript START -->
+
+<script type="text/javascript" src="./SIRAJA_files/materialize.min.js.download"></script>
+<script type="text/javascript" src="./SIRAJA_files/bootstrap.min.js.download"></script>
+<script type="text/javascript" src="./SIRAJA_files/jquery.autocomplete.min.js.download"></script>
+<script data-pace-options="{ &quot;ajax&quot;: false }" src="./SIRAJA_files/pace.min.js.download"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    //jquery dropdown
+    $(".dropdown-button").dropdown({ hover: false });
+
+    //jquery sidenav on mobile
+    $('.button-collapse').sideNav({
+        menuWidth: 240,
+        edge: 'left',
+        closeOnClick: true
+    });
+
+    //jquery datepicker
+    $('#tgl_surat,#batas_waktu,#dari_tanggal,#sampai_tanggal').pickadate({
+        selectMonths: true,
+        selectYears: 50,
+        format: "yyyy-mm-dd"
+    });
+
+    //jquery teaxtarea
+    $('#isi_ringkas').val('');
+    $('#isi_ringkas').trigger('autoresize');
+
+    //jquery dropdown select dan tooltip
+    $('select').material_select();
+    $('.tooltipped').tooltip({delay: 10});
+
+    //jquery autocomplete
+    $( "#kode" ).autocomplete({
+        serviceUrl: "kode.php",   // Kode php untuk prosesing data.
+        dataType: "JSON",           // Tipe data JSON.
+        onSelect: function (suggestion) {
+            $( "#kode" ).val(suggestion.kode);
+        }
+    });
+
+    //jquery untuk menampilkan pemberitahuan
+    $("#alert-message").alert().delay(5000).fadeOut('slow');
+
+    //jquery modal
+    $('.modal-trigger').leanModal();
+ });
+
+</script>
+<!-- Javascript END -->
+
+        <!-- Include Footer END -->
+
+    
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+
+
+    <script type="text/javascript">
+        var chart5; // globally available
+        $(document).ready(function() {
+            Highcharts.setOptions({
+                colors: ['#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a', '#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a']
+            });
+
+            chart5 = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'chart-bar-5',
+                    type: 'column'
+                },
+                title: {
+                    text: 'Informasi Klinik'
+                },
+                xAxis: {
+                    categories: ['Klinik']
+                },
+                yAxis: {
+                    title: {
+                        text: ''
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.y}'
+                        }
+                    }
+                },
+                series: [
+                    <br />
+<b>Notice</b>:  Undefined variable: query5 in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>314</b><br />
+<br />
+<b>Warning</b>:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>314</b><br />
+                ]
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        var chart3; // globally available
+        $(document).ready(function() {
+            Highcharts.setOptions({
+                colors: ['#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a', '#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a']
+            });
+
+            chart3 = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'chart-bar-3',
+                    type: 'column'
+                },
+                title: {
+                    text: 'Suku'
+                },
+                xAxis: {
+                    categories: ['Suku']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Jumlah'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.y}'
+                        }
+                    }
+                },
+                series: [
+                    <br />
+<b>Notice</b>:  Undefined variable: query3 in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>362</b><br />
+<br />
+<b>Warning</b>:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>362</b><br />
+                ]
+            });
+        });
+
+        $(function() {
+
+
+            var chart3;
+
+            $(document).ready(function() {
+                chart3 = new Highcharts.setOptions({
+                    colors: ['#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a', '#0984e3', '#ff7675', '#00d9ff', '#6a65ff', '#ff73f5', '#ff5c76', '#2afff9', '#6fff6a']
+                });
+                // Build the chart
+                chart3 = new Highcharts.Chart({
+                    chart: {
+                        renderTo: 'chart-pie-3',
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false
+                    },
+                    title: {
+                        text: 'Suku'
+                    },
+                    tooltip: {
+                        pointFormat: '<b>{point.percentage}%</b>',
+                        percentageDecimals: 1
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true
+                            },
+                            showInLegend: true
+                        }
+                    },
+                    series: [{
+                        type: 'pie',
+                        name: '',
+                        data: [
+                            <br />
+<b>Notice</b>:  Undefined variable: qry3 in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>409</b><br />
+<br />
+<b>Warning</b>:  mysqli_query(): Empty query in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>409</b><br />
+<br />
+<b>Warning</b>:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>410</b><br />
+                        ]
+                    }]
+                });
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        var chart2; // globally available
+        $(document).ready(function() {
+            Highcharts.setOptions({
+                colors: ['#1abc9c', '#95a5a6', '#3498db', '#f1c40f', '#3498db', '#9b59b6']
+            });
+
+            chart2 = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'chart-bar-2',
+                    type: 'column'
+                },
+                title: {
+                    text: 'Agama'
+                },
+                xAxis: {
+                    categories: ['Agama']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Jumlah'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.y}'
+                        }
+                    }
+                },
+                series: [
+                    <br />
+<b>Notice</b>:  Undefined variable: query2 in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>458</b><br />
+<br />
+<b>Warning</b>:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>458</b><br />
+                ]
+            });
+        });
+
+        $(function() {
+
+
+            var chart2;
+
+            $(document).ready(function() {
+                chart2 = new Highcharts.setOptions({
+                    colors: ['#1abc9c', '#95a5a6', '#3498db', '#f1c40f', '#3498db', '#9b59b6']
+                });
+                // Build the chart
+                chart2 = new Highcharts.Chart({
+                    chart: {
+                        renderTo: 'chart-pie-2',
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false
+                    },
+                    title: {
+                        text: 'Agama'
+                    },
+                    tooltip: {
+                        pointFormat: '<b>{point.percentage}%</b>',
+                        percentageDecimals: 1
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true
+                            },
+                            showInLegend: true
+                        }
+                    },
+                    series: [{
+                        type: 'pie',
+                        name: '',
+                        data: [
+                            <br />
+<b>Notice</b>:  Undefined variable: qry2 in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>505</b><br />
+<br />
+<b>Warning</b>:  mysqli_query(): Empty query in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>505</b><br />
+<br />
+<b>Warning</b>:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in <b>C:\xampp\htdocs\project000\admin.php</b> on line <b>506</b><br />
+                        ]
+                    }]
+                });
+            });
+
+        });
+    </script>
+
+    
+
+<div class="hiddendiv common"></div><ul id="pengaturan" class="dropdown-content" style="">
+                        <li><a href="http://localhost/project000/admin.php?page=tsm">BNNK Batam</a></li>
+                        <li><a href="http://localhost/project000/admin.php?page=tsm">BNNK Tanjungpinang</a></li>
+                        <li><a href="http://localhost/project000/admin.php?page=tsm">BNNK Karimun</a></li>
+                    </ul><ul id="pengaturan" class="dropdown-content" style="">
+                        <li><a href="http://localhost/project000/admin.php?page=ref">Kategori Klinik</a></li>
+                        <li><a href="http://localhost/project000/admin.php?page=sett">Pengaturan</a></li>
+                        <li><a href="http://localhost/project000/admin.php?page=sett&amp;sub=usr">User</a></li>
+                        <li class="divider"></li>
+                        <li><a href="http://localhost/project000/admin.php?page=sett&amp;sub=back">Backup Database</a></li>
+                        <li><a href="http://localhost/project000/admin.php?page=sett&amp;sub=rest">Restore Database</a></li>
+                    </ul><ul id="logout" class="dropdown-content" style="">
+            <li><a href="http://localhost/project000/admin.php?page=pro">Profil</a></li>
+            <li><a href="http://localhost/project000/admin.php?page=pro&amp;sub=pass">Ubah Password</a></li>
+            <li class="divider"></li>
+            <li><a href="http://localhost/project000/logout.php"><i class="material-icons">settings_power</i> Logout</a></li>
+        </ul><div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div><ul id="select-options-8060cf32-2812-ec1e-f1d8-16988455e48e" class="dropdown-content select-dropdown" style="width: 533.219px; display: none; top: 387.188px; left: 399.281px; height: 104px; opacity: 0;"><li class=""><span>Laki-laki</span></li><li class="active"><span>Perempuan</span></li></ul><ul id="select-options-81c1c26f-77a7-765d-04f5-3b760ea26128" class="dropdown-content select-dropdown" style="width: 533.219px; display: none; top: 387.188px; left: 1028.03px; height: 312px; opacity: 0;"><li class="active"><span>Islam</span></li><li class=""><span>Keristen Protestan</span></li><li class=""><span>Kristen Katolik</span></li><li class=""><span>Hindu</span></li><li class=""><span>Buddha</span></li><li class=""><span>Konghuchu</span></li></ul><ul id="select-options-50d8ac34-5fd7-fde5-9302-380f625d927d" class="dropdown-content select-dropdown" style="width: 533.219px; display: none; top: 493.188px; left: 399.281px; height: 662.891px; opacity: 0;"><li class=""><span>Suku Jawa</span></li><li class=""><span>Suku Sunda</span></li><li class=""><span>Suku Batak</span></li><li class=""><span>Suku Madura</span></li><li class=""><span>Suku Betawi</span></li><li class=""><span>Suku Bugis</span></li><li class=""><span>Suku Melayu</span></li><li class="active"><span>Suku Aceh</span></li><li class=""><span>Suku Banten</span></li><li class=""><span>Suku Banjar</span></li><li class=""><span>Suku Bali</span></li><li class=""><span>Suku Sasak</span></li><li class=""><span>Suku Dayak</span></li><li class=""><span>Suku Tionghoa</span></li><li class=""><span>Suku Makassar</span></li><li class=""><span>Suku kaili</span></li><li class=""><span>Suku Cirebon</span></li><li class=""><span>Suku Lain-lain</span></li></ul><ul id="select-options-dbd499d5-f08e-e811-f3ce-4deea63f97bd" class="dropdown-content select-dropdown" style="width: 533.219px; display: none; top: 493.188px; left: 1028.03px; height: 104px; opacity: 0;"><li class=""><span>Menikah</span></li><li class="active"><span>Lajang</span></li></ul><ul id="select-options-5b2591b2-4ad3-d407-bcbc-6478d136b544" class="dropdown-content select-dropdown" style="width: 533.219px; display: none; top: 751.188px; left: 1028.03px; height: 208px; opacity: 0;"><li class="active"><span>Pilih </span></li><li class=""><span>Klink awalbros</span></li><li class=""><span>Klinik BNN Batam</span></li><li class=""><span>Klink Kimia Farma batu aji</span></li></ul><div class="autocomplete-suggestions" style="position: absolute; max-height: 300px; z-index: 9999; top: 691.188px; left: 1011.25px; width: 561.25px; display: none;"><div class="autocomplete-suggestion" data-index="0"></div></div></body></html>

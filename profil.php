@@ -195,14 +195,14 @@
                                         }
                                     ?>
                                 <label for="password">Password Baru</label>
-                                <small class="red-text">*Setelah menekan tombol "Simpan", Anda akan diminta melakukan Login ulang.</small>
+                                <small class="red-text">*Setelah menekan tombol "SUBMIT", Anda akan diminta melakukan Login ulang.</small>
                             </div>
                         </div>
                         <!-- Row in form END -->
                         <br/>
                         <div class="row">
                             <div class="col 6">
-                                <button type="submit" name="submit" class="btn-large blue waves-effect waves-light">SIMPAN <i class="material-icons">done</i></button>
+                                <button type="submit" name="submit" class="btn-large blue waves-effect waves-light">SUBMIT <i class="material-icons">done</i></button>
                             </div>
                             <div class="col 6">
                                 <a href="?page=pro" class="btn-large deep-orange waves-effect waves-light">BATAL <i class="material-icons">clear</i></a>

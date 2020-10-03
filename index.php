@@ -243,14 +243,6 @@ Website     : https://masrud.com
                         ?>
 
                         <?php
-                        /**
-                         * Proses penyesuaian login berdasarkan data yang sudah ada, 
-                         * modifikasi total ini di sesuaikan dengan pola code yang sudah di kembangkan
-                         * Saya Maulana, hanya menyesuaikan agar berjalan level akses yang di butuhkan.
-                         * Pada halaman sebelumnya tidak di sediakan halaman yang di harapkan. maka untuk kases saya buatkan halaman contoh tidak lengkap 
-                         * karena tugas adalah pembautan level hak akses. dengan php native yang sudah di kembangkan.
-                         * 
-                         */
                         if (isset($_REQUEST['submit'])) {
 
                             //validasi form kosong
@@ -262,84 +254,31 @@ Website     : https://masrud.com
                                 $username = trim(htmlspecialchars(mysqli_real_escape_string($config, $_REQUEST['username'])));
                                 $password = trim(htmlspecialchars(mysqli_real_escape_string($config, $_REQUEST['password'])));
 
-                                $query = mysqli_query($config, "SELECT * FROM tbl_user WHERE username='$username' AND password=MD5('$password')");
+                                $query = mysqli_query($config, "SELECT id_user, username, nama, nip, admin, kota FROM tbl_user WHERE username='$username' AND password=MD5('$password')");
+                                //print_r(mysqli_num_rows($query)); die();
+                                if (mysqli_num_rows($query) > 0) {
 
-                                $dataLogin = mysqli_fetch_array($query);
 
-                                $dataTersedia = mysqli_num_rows($query);
 
-                                /**
-                                 * Array ( [0] => 1 [id_user] => 1 [1] => admin1 [username] => admin1 [2] => 21232f297a57a5a743894a0e4a801fc3 [password] => 21232f297a57a5a743894a0e4a801fc3 [3] => Super Admin Siraja BNNP KEPRI [nama] => Super Admin Siraja BNNP KEPRI [4] => - [nip] => - [5] => 1 [admin] => 1 )
-                                 */
-                                if ($dataTersedia > 0) {
-                                    // jika Password dan username benar 
-                                    // periksa level akses member 
-                                    if ($dataLogin['admin'] == 1) {
-                                        // Masukan ke dalam session admin 
-                                        //buat session
 
-                                        $_SESSION['id_user'] = $dataLogin['id_user'];
-                                        $_SESSION['username'] = $dataLogin['username'];
-                                        $_SESSION['nama'] = $dataLogin['nama'];
-                                        $_SESSION['nip'] = $dataLogin['nip'];
-                                        $_SESSION['admin'] = $dataLogin['admin'];
-                                        header("Location: ./admin.php");
-                                        die();
-                                    } elseif ($dataLogin['admin'] == 2) {
-                                        // Masuk sebagai 
+                                    list($id_user, $username, $nama, $nip, $admin, $kota) = mysqli_fetch_array($query);
 
-                                        $_SESSION['id_user'] = $dataLogin['id_user'];
-                                        $_SESSION['username'] = $dataLogin['username'];
-                                        $_SESSION['nama'] = $dataLogin['nama'];
-                                        $_SESSION['nip'] = $dataLogin['nip'];
-                                        $_SESSION['admin'] = $dataLogin['admin'];
-                                        header("Location: ./admin.php");
-                                        die();
-                                    } elseif ($dataLogin['admin'] == 3) {
-                                        // Masuk Sebagai 
+                                    //buat session
+                                    $_SESSION['id_user'] = $id_user;
+                                    $_SESSION['username'] = $username;
+                                    $_SESSION['nama'] = $nama;
+                                    $_SESSION['nip'] = $nip;
+                                    $_SESSION['admin'] = $admin;
+                                    $_SESSION['kota'] = $kota;
 
-                                        $_SESSION['id_user'] = $dataLogin['id_user'];
-                                        $_SESSION['username'] = $dataLogin['username'];
-                                        $_SESSION['nama'] = $dataLogin['nama'];
-                                        $_SESSION['nip'] = $dataLogin['nip'];
-                                        $_SESSION['admin'] = $dataLogin['admin'];
-                                        header("Location: ./admin.php");
-                                        die();
-                                    } elseif ($dataLogin['admin'] == 4) {
-                                        // Masuk Sebagai 
-
-                                        $_SESSION['id_user'] = $dataLogin['id_user'];
-                                        $_SESSION['username'] = $dataLogin['username'];
-                                        $_SESSION['nama'] = $dataLogin['nama'];
-                                        $_SESSION['nip'] = $dataLogin['nip'];
-                                        $_SESSION['admin'] = $dataLogin['admin'];
-                                        header("Location: ./admin.php");
-                                        die();
-                                    } elseif ($dataLogin['admin'] == 5) {
-                                        // Masuk Sebagai 
-
-                                        $_SESSION['id_user'] = $dataLogin['id_user'];
-                                        $_SESSION['username'] = $dataLogin['username'];
-                                        $_SESSION['nama'] = $dataLogin['nama'];
-                                        $_SESSION['nip'] = $dataLogin['nip'];
-                                        $_SESSION['admin'] = $dataLogin['admin'];
-                                        header("Location: ./admin.php");
-                                        die();
-                                    } else {
-                                        // Masuk Sebagai Member Biasa
-
-                                        $_SESSION['id_user'] = $dataLogin['id_user'];
-                                        $_SESSION['username'] = $dataLogin['username'];
-                                        $_SESSION['nama'] = $dataLogin['nama'];
-                                        $_SESSION['nip'] = $dataLogin['nip'];
-                                        $_SESSION['admin'] = $dataLogin['admin'];
-                                        header("Location: ./admin.php");
-                                        die();
-                                    }
+                                    header("Location: ./admin.php");
+                                    die();
                                 } else {
-                                    // Jika username dan password tidak tersedia pada database
+
+                                    //session error
                                     $_SESSION['errLog'] = '<center>Username & Password tidak ditemukan!</center>';
                                     header("Location: ./");
+                                    die();
                                 }
                             }
                         } else {

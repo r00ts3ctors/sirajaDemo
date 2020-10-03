@@ -45,7 +45,7 @@
                     if($_SESSION['id_user'] != $row['id_user'] AND $_SESSION['id_user'] != 1){
                         echo '<script language="javascript">
                                 window.alert("ERROR! Anda tidak memiliki hak akses untuk melihat data ini");
-                                window.location.href="./admin.php?page=tsm";
+                                window.location.href="./admin.php?page=tsm&act=scr&id_surat='.$row['id_surat'].'";
                               </script>';
                     } else {
 
@@ -61,7 +61,7 @@
                                                         <li class="waves-effect waves-light hide-on-small-only"><a href="#" class="judul"><i class="material-icons">update</i> Assessment Klien </a></li>
                                                         
                                                         </li>
-                                                        <li class="waves-effect waves-light hide-on-small-only"><a href="?page=tsm"><i class="material-icons">keyboard_return</i> Kembali</a></li>
+                                                        <li class="waves-effect waves-light hide-on-small-only"><a href="?page=tsm&act=scr&id_surat='.$row['id_surat'].'"><i class="material-icons">keyboard_return</i> Kembali</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
